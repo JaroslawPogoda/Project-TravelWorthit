@@ -1,0 +1,38 @@
+
+<html ng-app ng-controller="billsfromwrevel">
+  <head>
+    <title>Travel Worth</title>
+    <link rel="stylesheet" href="css/travelworth.css" />
+  </head>
+  <body>
+    <h1>TravelWorthy</h1>
+	<form  >
+	<h2>Additional Offers</h2>
+	<ul>
+		<li ng-repeat="payment in payments" ng-click="toggleActive(payment)" ng-class="{active:payment.active}">
+			{{payment.name}} <span>{{payment.price | currency}}</span>
+		</li>
+	</ul>
+	
+</form>
+        <script src="js/angular.min.js"></script>
+        <script src="js/scripts.js"></script>
+    <div id="info">
+      <h2>latest hotel offer</h2>
+      <div id="hotelName"></div>
+      <div id="roomRate"></div>
+      <div id="specialRate" value ="specialRate"></div>
+      <p>room rate when you book 2 or more nights</p>
+      <div id="offerEnds"></div>
+	  <div class="total">
+		Total for services: <span>{{total() | currency}}</span>
+	</div>
+	
+	<div class="total">
+		Total: <span>offerPrice() + {{total()}} </span>
+	</div>
+	<div id="hotel.special"></div>
+    </div>
+    <script src="js/travelworth.js"></script>
+  </body>
+</html>
